@@ -1,16 +1,16 @@
 name: Sample github workflow
 on:
-  push:
-    branches:
-      - dev
-    #   - 'feature/**'
-    #   - 'releases/*'
-    tags:
-      - 'v1.*.*'
-    # paths:
-    #   - '**.js'
-    paths-ignore:
-      - '**.html'
+  # push:
+  #   branches:
+  #     - dev
+  #   #   - 'feature/**'
+  #   #   - 'releases/*'
+  #   tags:
+  #     - 'v1.*.*'
+  #   # paths:
+  #   #   - '**.js'
+  #   paths-ignore:
+  #     - '**.html'
   pull_request:
     types: [opened, reopened,closed]
       
