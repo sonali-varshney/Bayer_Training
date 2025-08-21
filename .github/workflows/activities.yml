@@ -5,8 +5,8 @@ on:
       - dev
     #   - 'feature/**'
     #   - 'releases/*'
-    # tags:
-    #   - 'v1.**'
+    tags:
+      - 'v1.**'
       
   # workflow_dispatch:
   #   inputs:
