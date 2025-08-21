@@ -11,6 +11,8 @@ on:
     #   - '**.js'
     paths-ignore:
       - '**.html'
+  pull_request:
+    types: [opened, reopened,closed]
       
   # workflow_dispatch:
   #   inputs:
