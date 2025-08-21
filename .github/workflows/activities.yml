@@ -1,6 +1,5 @@
 name: Sample github workflow
 on:
-  [ push,workflow_dispatch ]
   workflow_dispatch:
     inputs:
       env:
