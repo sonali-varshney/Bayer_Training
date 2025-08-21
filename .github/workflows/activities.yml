@@ -2,19 +2,32 @@ name: Sample github workflow
 on:
   push:
     branches:
-      - 'feature/**'
-      - 'releases/*'
+      - dev
+    #   - 'feature/**'
+    #   - 'releases/*'
+    # tags:
+    #   - 'v1.**'
       
-  workflow_dispatch:
-    inputs:
-      env:
-        description: enter the env
-        required: true
-        default: dev
-        type: choice
-        options:
-        - dev
-        - prod
-        - stage
-        - qa
+  # workflow_dispatch:
+  #   inputs:
+  #     env:
+  #       description: enter the env
+  #       required: true
+  #       default: dev
+  #       type: choice
+  #       options:
+  #       - dev
+  #       - prod
+  #       - stage
+  #       - qa
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+     - name: first job
+       run: echo "sample"
+      
+        
   
