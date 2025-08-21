@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - dev
+      - 'feature/**'
     #   - 'feature/**'
     #   - 'releases/*'
     # tags:
