@@ -7,8 +7,6 @@ on:
     #   - 'releases/*'
     tags:
       - 'v1.**'
-    paths:
-      - '**.js'
     # paths:
     #   - '**.js'
     paths_ignore:
