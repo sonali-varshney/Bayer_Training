@@ -9,7 +9,7 @@ on:
       - 'v1.**'
     # paths:
     #   - '**.js'
-    paths_ignore:
+    paths-ignore:
       - '*.html'
       
   # workflow_dispatch:
