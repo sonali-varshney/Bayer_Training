@@ -7,6 +7,8 @@ on:
     #   - 'releases/*'
     tags:
       - 'v1.**'
+    paths:
+      - '*.js'
       
   # workflow_dispatch:
   #   inputs:
