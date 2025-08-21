@@ -10,7 +10,7 @@ jobs:
 
     steps:
      - name: first job
-       uses: actions/Bayer_Training@v2
+       uses: actions/Bayer_Training@main
          with:
            who-to-greet: 'Mona the Octocat'
     
