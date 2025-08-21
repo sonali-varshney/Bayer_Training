@@ -1,0 +1,14 @@
+name: Sample github workflow
+on:
+  workflow_dispatch:
+    inputs:
+      env:
+        description: enter the env
+        required: true
+        default: dev
+        type: choice
+        options:
+        - dev
+        - prod
+        - stage
+        - qa
