@@ -10,7 +10,10 @@ jobs:
 
     steps:
      - name: first job
-       run: echo "sample"
+       uses: actions/Bayer_Training@v2
+         with:
+           who-to-greet: 'Mona the Octocat'
+    
       
         
   
