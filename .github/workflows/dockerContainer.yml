@@ -1,5 +1,16 @@
-name: "Hello World Action"
-description: "An action that prints Hello, World!"
-runs:
-  using: "docker"
-  image: "Dockerfile"
+name: Sample github workflow
+on:
+  push:
+    branches:
+      - main
+      
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+     - name: first job
+       run: echo "sample"
+      
+        
+  
