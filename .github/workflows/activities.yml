@@ -1,31 +1,31 @@
 name: Sample github workflow
 on:
-  # push:
-  #   branches:
-  #     - dev
-  #   #   - 'feature/**'
-  #   #   - 'releases/*'
-  #   tags:
-  #     - 'v1.*.*'
-  #   # paths:
-  #   #   - '**.js'
-  #   paths-ignore:
-  #     - '**.html'
+  push:
+    branches:
+      - dev
+    #   - 'feature/**'
+    #   - 'releases/*'
+    tags:
+      - 'v1.*.*'
+    # paths:
+    #   - '**.js'
+    paths-ignore:  # if we use paths then we can't use paths-ignore filter
+      - '**.html'
   pull_request:
     types: [opened, reopened,closed]
       
-  # workflow_dispatch:
-  #   inputs:
-  #     env:
-  #       description: enter the env
-  #       required: true
-  #       default: dev
-  #       type: choice
-  #       options:
-  #       - dev
-  #       - prod
-  #       - stage
-  #       - qa
+  workflow_dispatch:
+    inputs:
+      env:
+        description: enter the env
+        required: true
+        default: dev
+        type: choice
+        options:
+        - dev
+        - prod
+        - stage
+        - qa
 
 jobs:
   build:
