@@ -12,7 +12,7 @@ jobs:
      - name: Checkout
        uses: actions/checkout@v5.0.0
      - name: first job
-       uses: actions/Bayer_Training@main
+       uses: ./
        with:
          who-to-greet: 'Sonali'
     
