@@ -1,5 +1,10 @@
 name: Sample github workflow
 on:
+  push:
+    branches:
+      - 'feature/**'
+      - 'releases/*'
+      
   workflow_dispatch:
     inputs:
       env:
@@ -12,3 +17,4 @@ on:
         - prod
         - stage
         - qa
+  
