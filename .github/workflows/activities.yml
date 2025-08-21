@@ -10,7 +10,7 @@ on:
     # paths:
     #   - '**.js'
     paths-ignore:
-      - '*.html'
+      - '**.html'
       
   # workflow_dispatch:
   #   inputs:
