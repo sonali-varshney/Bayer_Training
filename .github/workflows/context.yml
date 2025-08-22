@@ -1,0 +1,48 @@
+name: Sample github workflow
+on:
+  push:
+
+  # workflow_dispatch:
+  #   inputs:
+  #     env:
+  #       description: enter the env
+  #       required: true
+  #       default: dev
+  #       type: choice
+  #       options:
+  #       - dev
+  #       - prod
+  #       - stage
+  #       - qa
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+     - name: first job
+       run: |
+            echo "$github.actor is ${{github.actor}}"
+            echo " github.event is ${{github.event}}"
+            echo "github.ref is ${{github.ref}}"
+            echo "github.ref_name is ${{github.ref_name}}"
+            echo "github.repository is ${{github.repository}}" 
+            echo "github.run_number is ${{github.run_number}}" 
+            echo "github.run_id is ${{github.run_id}}" 
+            echo "github.sha is ${{github.sha}}" 
+            echo "github.token is ${{github.token}}" 
+            echo "github.workflow is ${{github.workflow}}" 
+            echo "job.container is ${{job.container}}" #Information about the container of the job.
+            echo "job.container.id is ${{job.container.id}}"  #The ID of the container.
+            echo "job.status is ${{job.status}}"  #The current state of the task. Possible values are , or .successfailurecancelled
+            echo "jobs.<job_id>.timeout-minutes is ${{jobs.<job_id>.timeout-minutes}}" #This sets a timeout for the job, after which it’s automatically canceled.
+
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+     - name: second job     
+       run: echo "sample"
+      
+        
+  
