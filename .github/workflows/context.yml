@@ -22,7 +22,7 @@ jobs:
     steps:
      - name: first job
        run: |
-            echo "$github.actor is ${{github.actor}}"
+            echo "github.actor is ${{github.actor}}"
             echo " github.event is ${{github.event}}"
             echo "github.ref is ${{github.ref}}"
             echo "github.ref_name is ${{github.ref_name}}"
@@ -32,6 +32,8 @@ jobs:
             echo "github.sha is ${{github.sha}}" 
             echo "github.token is ${{github.token}}" 
             echo "github.workflow is ${{github.workflow}}" 
+            echo "github.event_name is ${{github.event_name}}"
+        
 
 
   test:
@@ -40,6 +42,8 @@ jobs:
     steps:
      - name: second job     
        run: echo "sample"
+     - if: ${{github.event_name}}==push
+       run: sleep 60
       
         
   
