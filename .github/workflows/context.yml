@@ -32,10 +32,7 @@ jobs:
             echo "github.sha is ${{github.sha}}" 
             echo "github.token is ${{github.token}}" 
             echo "github.workflow is ${{github.workflow}}" 
-            # echo "job.container is ${{job.container}}" #Information about the container of the job.
-            # echo "job.container.id is ${{job.container.id}}"  #The ID of the container.
-            # echo "job.status is ${{job.status}}"  #The current state of the task. Possible values are , or .successfailurecancelled
-            # echo "jobs.<job_id>.timeout-minutes is ${{jobs.<job_id>.timeout-minutes}}" #This sets a timeout for the job, after which it’s automatically canceled.
+
 
   test:
     runs-on: ubuntu-latest
