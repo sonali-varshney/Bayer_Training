@@ -1,6 +1,6 @@
 name: environment and download the artifact
 on:
-  workflow_dispatch:
+  push:
 
 env:
     passw: Secret
