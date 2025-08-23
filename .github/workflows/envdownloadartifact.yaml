@@ -21,7 +21,4 @@ jobs:
      - name: first job
        run: |
             echo "github.actor is ${{github.actor}}"
-            echo " github.event is ${{github.event}}"
-            echo "github.ref is ${{github.ref}}"
-            echo "github.ref_name is ${{github.ref_name}}"
-            echo "github.repository is ${{github.repository}}" 
+
