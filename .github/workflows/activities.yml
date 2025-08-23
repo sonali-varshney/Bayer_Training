@@ -2,11 +2,11 @@ name: Sample github workflow
 on:
   push:
     branches:
-      - dev
+      - dev   #ref- refs/head/dev
     #   - 'feature/**'
     #   - 'releases/*'
     tags:
-      - 'v1.*.*'
+      - 'v1.*.*'    #ref- refs/tags/v1.
     # paths:
     #   - '**.js'
     paths-ignore:  # if we use paths then we can't use paths-ignore filter
