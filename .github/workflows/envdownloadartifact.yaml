@@ -18,6 +18,7 @@ jobs:
     
   deployonQA:
     runs-on: ubuntu-latest
+    needs: deployonDev 
     environment: QA
     steps:
      - name: Print secrets and var of QA env
@@ -29,6 +30,7 @@ jobs:
   deployonProd:
     runs-on: ubuntu-latest
     environment: Prod
+    needs: deployonQA
     steps:
      - name: Print secrets and var of prod env
        run: |
