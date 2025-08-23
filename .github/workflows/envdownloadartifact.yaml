@@ -1,32 +1,11 @@
 name: environment and download the artifact
 on:
   workflow_dispatch:
-    inputs:
-      env:
-        description: enter the env
-        required: true
-        default: dev
-        type: choice
-        options:
-        - dev
-        - prod
-        - stage
-        - qa
 
 env:
     passw: Secret
 jobs:
 
-  # build:
-  #   runs-on: ubuntu-latest
-  #   environment: dev
-
-  #   steps:
-  #    - name: Print secrets and var of dev env
-  #      run: |
-
-  #        echo "Sample secret value for env var is ${{env.passw}}"
-  
   deployonDev:
     runs-on: ubuntu-latest
     environment: dev
