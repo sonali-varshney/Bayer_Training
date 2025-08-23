@@ -3,7 +3,7 @@ on:
   push:
 
 env:
-    passw: Secret
+    age: 15
 jobs:
 
   deployonDev:
@@ -14,7 +14,7 @@ jobs:
        run: |
          echo "Sample var value for dev env is ${{vars.name}}"
          echo "Sample secret value for dev env is ${{secrets.passw}}"
-         echo "Sample secret value for env var is ${{env.passw}}"
+         echo "Sample secret value for env var is ${{env.age}}"
     
   deployonQA:
     runs-on: ubuntu-latest
@@ -24,7 +24,7 @@ jobs:
        run: |
          echo "Sample var value for qa env is ${{vars.name}}"
          echo "Sample secret value for qa env is ${{secrets.passw}}"
-         echo "Sample secret value for env var is ${{env.passw}}"
+         echo "Sample secret value for env var is ${{env.age}}"
 
   deployonProd:
     runs-on: ubuntu-latest
@@ -34,5 +34,5 @@ jobs:
        run: |
          echo "Sample var value for prod env is ${{vars.name}}"
          echo "Sample secret value for prod env is ${{secrets.passw}}"
-         echo "Sample secret value for env var is ${{env.passw}}"
+         echo "Sample secret value for env var is ${{env.age}}"
 
