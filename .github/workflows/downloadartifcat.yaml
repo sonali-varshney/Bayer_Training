@@ -1,11 +1,11 @@
-name: Download the build artifact from another repository
+name: Self hosted runner and Download the build artifact from another repository
 on:
   push:
 
 jobs:
 
   build:
-    runs-on: ubuntu-latest
+    runs-on: assignment
     steps:
      - name: Download the build artifact from another repository
        uses: actions/download-artifact@v5.0.0
