@@ -5,7 +5,7 @@ on:
 jobs:
 
   build:
-    runs-on: assignment
+    runs-on: assignment  # give label here for running this job on your self hosted runner
     steps:
      - name: Download the build artifact from another repository
        uses: actions/download-artifact@v5.0.0
