@@ -1,1 +1,24 @@
+name: Download the build artifact from another repository
+on:
+  push:
 
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+     - name: Download the build artifact from another repository
+       uses: actions/download-artifact@v5.0.0
+       with:
+         name: myartifact  # Name of the artifact to download. optional. If unspecified, all artifacts for the run are downloaded.
+         path: sonali # optional. Destination path where to store the downloaded artifact..
+         github-token: ${{github.token}} # This is required when downloading artifacts from a different repository or from a different workflow run. If this is not specified, the action will attempt to download artifacts from the current repository and the current workflow run.
+         repository: sonali-varshney/GeneralSpringBootProgExce # optional, default is ${{ github.repository }}.  <repositoryOwner/repositoryName>. If github-token is specified, this is the repository that artifacts will be downloaded from.
+         run-id: 17186323359 # optional, default is ${{ github.run_id }}. this you will get from URL of that run. The id of the workflow run where the desired download artifact was uploaded from. If github-token is specified, this is the run that artifacts will be downloaded from.
+     
+     - name: Verify whether the build artifact can be downloaded from another repo
+       run: ls -lrt && ls sonali    
+
+          
+    
+         
