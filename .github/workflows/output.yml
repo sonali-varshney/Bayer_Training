@@ -9,7 +9,7 @@ jobs:
     steps:
      - name: first step
        id: test
-       run: echo "age=10" >> GITHUB_OUTPUTS
+       run: echo "age=10" >> "$GITHUB_OUTPUTS"
 
      - name: second step
        run: echo "Hi"
