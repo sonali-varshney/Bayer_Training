@@ -4,6 +4,8 @@ on:
 
 jobs:
   build:
+    outputs:
+      exportingoutput: ${{steps.test.outputs.age}}
     runs-on: ubuntu-latest
 
     steps:
@@ -21,14 +23,14 @@ jobs:
         
 
 
-  # test:
-  #   runs-on: ubuntu-latest
+  test:
+    runs-on: ubuntu-latest
+    needs: build
 
-  #   steps:
-  #    - name: second job     
-  #      run: echo "sample"
+    steps:
+     - name: access output produced by first job    
+       run: echo "output produced by first job is ${{needs.build.outputs.exportingoutput}}"
 
-       # run: sleep 60
       
         
   
