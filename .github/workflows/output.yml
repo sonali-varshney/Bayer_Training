@@ -1,1 +1,33 @@
+name: github outputs
 on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+     - name: first step
+       id: test
+       run: echo "age=10" >> GITHUB_OUTPUTS
+
+     - name: second step
+       run: echo "Hi"
+
+     - name: third step
+       run: echo "output value is: ${{steps.test.outputs.age}}"
+       
+        
+
+
+  # test:
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+  #    - name: second job     
+  #      run: echo "sample"
+
+       run: sleep 60
+      
+        
+  
