@@ -15,7 +15,7 @@ jobs:
        run: echo "Hi"
 
      - name: third step
-       run: echo "output value is: ${{steps.test.outputs.age}}"
+       run: echo "output value is ${{steps.test.outputs.age}}"
        
         
 
