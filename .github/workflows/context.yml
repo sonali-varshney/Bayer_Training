@@ -2,19 +2,6 @@ name: Sample github workflow
 on:
   push:
 
-  # workflow_dispatch:
-  #   inputs:
-  #     env:
-  #       description: enter the env
-  #       required: true
-  #       default: dev
-  #       type: choice
-  #       options:
-  #       - dev
-  #       - prod
-  #       - stage
-  #       - qa
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -33,9 +20,7 @@ jobs:
             echo "github.token is ${{github.token}}" 
             echo "github.workflow is ${{github.workflow}}" 
             echo "github.event_name is ${{github.event_name}}"
-        
-
-
+      
   test:
     runs-on: ubuntu-latest
 
