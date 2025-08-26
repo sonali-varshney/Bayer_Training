@@ -19,8 +19,8 @@ jobs:
     - name: Build Docker image
       run: |
         docker build -t myapp .
-        docker tag myapp:latest ${DOCKER_IMAGE}:v1.0
-        docker push ${DOCKER_IMAGE}:v1.0
+        docker tag myapp:latest ${DOCKER_IMAGE}:${{github.ref}}
+        docker push ${DOCKER_IMAGE}:${{github.ref}}
 
 
 
