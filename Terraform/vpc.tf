@@ -32,7 +32,6 @@ resource "aws_internet_gateway" "igw" {
 }
 
 resource "aws_eip" "my_elastic_ip" {
-    vpc = true
 }
 
 resource "aws_nat_gateway" "nat" {
