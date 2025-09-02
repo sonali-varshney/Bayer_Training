@@ -1,2 +1,22 @@
-terraform validate
+name: Sample github workflow
+on:
+  workflow_dispatch:
+
+jobs:
+
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+     - name: Checkout
+       uses: actions/checkout@v5.0.0
+     - name: validate
+       run: terraform validate
+     - name: apply
+       run: terraform apply
+      
+      
+        
+  
+  
 terraform apply
