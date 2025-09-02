@@ -26,15 +26,12 @@ jobs:
          aws-access-key-id: ${{ secrets.ACCESS_KEY }}
          aws-secret-access-key: ${{ secrets.SECRET_KEY }}
 
-     - name: validate
-       run: terraform validate
-
-     - name: init
-       run: terraform init
-
      - name: init
        run: terraform init
        
+     - name: validate
+       run: terraform validate
+  
      - name: apply
        run: terraform apply
       
