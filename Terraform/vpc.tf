@@ -59,7 +59,7 @@ resource "aws_route_table" "pub_route_table" {
 }
 
 
-resource "aws_route_table_association" "associate_with_subnet" {
+resource "aws_route_table_association" "associate_with_pub_subnet" {
   subnet_id      = aws_subnet.pubsubnet.id
   route_table_id = aws_route_table.pub_route_table.id
 }
@@ -78,7 +78,7 @@ resource "aws_route_table" "priv_route_table" {
 }
 
 
-resource "aws_route_table_association" "associate_with_subnet" {
+resource "aws_route_table_association" "associate_with_priv_subnet" {
   subnet_id      = aws_subnet.prvsubnet.id
   route_table_id = aws_route_table.priv_route_table.id
 }
