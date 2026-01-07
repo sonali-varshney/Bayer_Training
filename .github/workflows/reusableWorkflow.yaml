@@ -7,4 +7,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-     - name: first job
+     - name: first step of 1st job
+       id: testing
+       run: echo "environment=Prod" >> $GITHUB_OUTPUT
+
+     - name: second step of 1st job
+       run: echo "Value is ${{ steps.testing.outputs.environment }}"    #output of a step
+       
