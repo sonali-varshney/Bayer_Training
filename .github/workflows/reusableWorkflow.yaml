@@ -1,4 +1,4 @@
-name: Sample github workflow
+name: Reusable workflow
 on:
   push:
 
@@ -13,4 +13,13 @@ jobs:
 
      - name: second step of 1st job
        run: echo "Value is ${{ steps.testing.outputs.environment }}"    #output of a step
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+     - name: first step of 2nd job
+       run: echo " 2nd job me 1st job ka output h ${{ need.build.outputs.environment }}"  #output of a job
+
        
