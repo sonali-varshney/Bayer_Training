@@ -1,6 +1,9 @@
 name: Reusable workflow
 on:
-  push:
+  workflow_call:              #for reusable workflow
+    outputs:
+      sub: ${{ jobs.deploy.outputs.subj }}    #output of a workflow
+  
 
 jobs:
   build:
@@ -16,12 +19,25 @@ jobs:
      - name: second step of 1st job
        run: echo "Value is ${{ steps.testing.outputs.environment }}"    #output of a step
 
-  deploy:
+  test:
     runs-on: ubuntu-latest
     needs: build
 
     steps:
      - name: first step of 2nd job
        run: echo " 2nd job me 1st job ka output h ${{ needs.build.outputs.envir }}"   #output of a job
+
+  deploy:                          #this job is for example of workflow output
+    runs-on: ubuntu-latest
+    outputs:          #step k output ko job ka output bnao..it is must for job output as well as workflow output
+      subj: ${{ steps.dep.outputs.subject }}  
+
+    steps:
+     - name: first step of 2nd job
+       id: dep
+       run: echo "subject=Maths" >> $GITHUB_OUTPUT       #output of a step
+    
+
+       
 
        
