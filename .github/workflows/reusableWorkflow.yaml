@@ -5,6 +5,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      envir:  ${{ steps.testing.outputs.environment }}  #step k output ko job ka output bnao..it is must for job output 
 
     steps:
      - name: first step of 1st job
@@ -12,7 +14,7 @@ jobs:
        run: echo "environment=Prod" >> $GITHUB_OUTPUT
 
      - name: second step of 1st job
-       run: echo "Value is ${{ steps.testing.outputs.environment }}"    #output of a step
+       run: echo "Value is ${{ steps.testing.outputs.envir }}"    #output of a step
 
   deploy:
     runs-on: ubuntu-latest
