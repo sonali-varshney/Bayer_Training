@@ -20,6 +20,6 @@ jobs:
 
     steps:
      - name: first step of 2nd job
-       run: echo " 2nd job me 1st job ka output h ${{ need.build.outputs.environment }}"  #output of a job
+       run: echo " 2nd job me 1st job ka output h ${{ need.build.outputs.environment }}"   #output of a job
 
        
