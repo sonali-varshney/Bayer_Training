@@ -2,7 +2,9 @@ name: Reusable workflow
 on:
   workflow_call:              #for reusable workflow
     outputs:
-      sub: ${{ jobs.deploy.outputs.subj }}    #output of a workflow
+      sub:
+        description: output of a workflow
+        value: ${{ jobs.deploy.outputs.subj }}    #output of a workflow
   
 
 jobs:
