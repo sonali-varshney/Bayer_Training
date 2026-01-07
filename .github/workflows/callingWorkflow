@@ -1,0 +1,17 @@
+name: Calling workflow
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+     - name: first job
+       id: abc
+       uses: ./.github/workflows/reusableWorkflow.yaml
+     
+     - name: second job
+       run: echo " final value of subject is ${{ steps.abc.outputs.sub }}"
+
+     
