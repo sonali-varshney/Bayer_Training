@@ -22,4 +22,6 @@ jobs:
       - name: second job
         run: echo "final value of subject is ${{ needs.building.outputs.sub }}"
 
+      - name: calling a composite action         #see we are calling a composite action in step level and not at job level
+        uses: ./.github/actions/action.yml
      
