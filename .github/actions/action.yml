@@ -1,3 +1,13 @@
 name: reusable action
 description: This is composite action
 
+runs:
+  using: composite
+
+steps:
+  - name: first step
+    run: echo "Hi"
+
+  - name: second step
+    run: echo "Hello"
+
