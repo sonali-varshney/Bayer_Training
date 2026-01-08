@@ -8,10 +8,10 @@ jobs:
 
     steps:
      - name: Checkout
-       uses: actions/checkout@v5.0.0
+       uses: actions/checkout@v6.0.1
      - name: first job
        id: abc
-       uses: ./.github/workflows/reusableWorkflow.yaml
+       uses: .github/workflows/reusableWorkflow.yaml   # if i will write this-> ./.github/workflows/reusableWorkflow.yaml , ye error dega-> Can't find 'action.yml', 'action.yaml' or 'Dockerfile' under it. why bcz aise composite  action(agr same repo me define kia h) k liye likhte h ./.github/workflows/reusable.yaml but workflow k liyw .github/workflows/reusable.yaml likhte h 
      
      - name: second job
        run: echo " final value of subject is ${{ steps.abc.outputs.sub }}"
