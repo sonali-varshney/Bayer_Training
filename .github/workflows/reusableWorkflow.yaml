@@ -11,7 +11,7 @@ on:
         description: output of a workflow
         value: ${{ jobs.deploy.outputs.subj }}    #output of a workflow
 
-    # secrets:
+    # secrets:    #agr individually secret ko pass krte to we need to define secret here like this.but since we are passing all the secret using "inherit",so no need to pass here,just use it
     #   firstsecret:
     #     required: true
   
@@ -49,10 +49,11 @@ jobs:
        run: |
          echo "subject=Maths" >> $GITHUB_OUTPUT       #output of a step
          echo "Jo  goodname input se aya uski value h ${{ inputs.goodname }}"
-         echo "secret ki value h ${{ secrets.firstsecret }}"
-         echo "2nd secret ki value h ${{ secrets.scndsecret }}"
-    
+         echo "2nd secret ki value h ${{ secrets.scndsecret }}"     #jb secret inherit kre to no need to define the secret upr, just use it like this
+         echo "1st secret ki value h ${{ secrets.pehlasecretforreusableworkflow }}" 
+        # echo "secret ki value h ${{ secrets.firstsecret }}"       #jb individually secret pass kre to aise upr defined secret ko use krosecret ho to
 
+         
        
 
        
