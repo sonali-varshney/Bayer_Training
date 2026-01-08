@@ -6,15 +6,15 @@ jobs:
   building:
     # runs-on: ubuntu-latest #Note you cant use "uses:" k sath "run-on"
     uses: ./.github/workflows/reusableWorkflow.yaml
-       # we cant use this "uses" for calling reusable workflow at STEP LEVEL. we have to define it at JOB LEVEL. 
-       # if i will write this-> ./.github/workflows/reusableWorkflow.yaml , ye error dega-> Can't find 'action.yml', 'action.yaml' or 'Dockerfile' under it. why bcz aise composite  action(agr same repo me define kia h) k liye likhte h ./.github/workflows/reusable.yaml but workflow k liyw .github/workflows/reusable.yaml likhte h 
-       # reuable workflow k liye @<branch> bhi likhna hoga last me
-       # Cannot call a local reusable workflow with a version
-  
+       # we cant use this "uses" for calling reusable workflow at STEP LEVEL. we have to define it at JOB LEVEL otherwise it will give error -> Can't find 'action.yml', 'action.yaml' or 'Dockerfile' under it. 
+       # reuable workflow k liye @<branch> nhi likhna hota last me otherwise error ati h-> invalid value workflow reference: cannot specify version when calling local workflows
+   
   deploying:
     runs-on: ubuntu-latest
+    needs: building
+    
     steps:       
       - name: second job
-        run: echo " final value of subject is ${{ steps.abc.outputs.sub }}"
+        run: echo " final value of subject is ${{ needs.building.outputs.sub }}"
 
      
