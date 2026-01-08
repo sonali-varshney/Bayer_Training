@@ -5,7 +5,7 @@ on:
 jobs:
   building:
     # runs-on: ubuntu-latest #Note you cant use "uses:" k sath "run-on"
-    uses: ./.github/workflows/reusableWorkflow.yaml@main
+    uses: ./.github/workflows/reusableWorkflow.yaml
        # we cant use this "uses" for calling reusable workflow at STEP LEVEL. we have to define it at JOB LEVEL. 
        # if i will write this-> ./.github/workflows/reusableWorkflow.yaml , ye error dega-> Can't find 'action.yml', 'action.yaml' or 'Dockerfile' under it. why bcz aise composite  action(agr same repo me define kia h) k liye likhte h ./.github/workflows/reusable.yaml but workflow k liyw .github/workflows/reusable.yaml likhte h 
        # reuable workflow k liye @<branch> bhi likhna hoga last me
