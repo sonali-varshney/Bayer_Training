@@ -50,7 +50,7 @@ jobs:
          echo "subject=Maths" >> $GITHUB_OUTPUT       #output of a step
          echo "Jo  goodname input se aya uski value h ${{ inputs.goodname }}"
          echo "secret ki value h ${{ secrets.firstsecret }}"
-       
+         echo "2nd secret ki value h ${{ secrets.scndsecret }}"
     
 
        
