@@ -9,7 +9,8 @@ jobs:
     with:           #see how to pass input,secret to a reusable workflow
       goodname: SonaliJi       #see how to pass input to a reusable workflow
     secrets:
-      firstsecret: ${{ secrets.pehlasecretforreusableworkflow }}    
+      inherit
+      # firstsecret: ${{ secrets.pehlasecretforreusableworkflow }}   #when i waqnt to pass secret individually  
        # we cant use this "uses" for calling reusable workflow at STEP LEVEL. we have to define it at JOB LEVEL otherwise it will give error -> Can't find 'action.yml', 'action.yaml' or 'Dockerfile' under it. 
        # reuable workflow k liye @<branch> nhi likhna hota last me otherwise error ati h-> invalid value workflow reference: cannot specify version when calling local workflows
    
