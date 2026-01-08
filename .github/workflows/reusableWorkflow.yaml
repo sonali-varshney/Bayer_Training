@@ -11,9 +11,9 @@ on:
         description: output of a workflow
         value: ${{ jobs.deploy.outputs.subj }}    #output of a workflow
 
-    secrets:
-      firstsecret:
-        required: true
+    # secrets:
+    #   firstsecret:
+    #     required: true
   
 
 jobs:
