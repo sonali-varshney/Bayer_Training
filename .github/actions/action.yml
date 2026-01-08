@@ -4,7 +4,7 @@ description: This is composite action
 runs:
   using: composite
 
-  steps:  # Note: composite action me there should not be any "job" , only "steps". Note ye steps using k sath likhi jaegi otherwise error will come no step found.
+  steps:
     - name: first step
       run: echo "Hi"
 
