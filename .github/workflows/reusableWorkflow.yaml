@@ -1,6 +1,11 @@
 name: Reusable workflow
 on:
   workflow_call:              #for reusable workflow
+    inputs:
+      goodname:
+        type: string
+        required: true        
+        
     outputs:
       sub:
         description: output of a workflow
@@ -37,7 +42,10 @@ jobs:
     steps:
      - name: first step of 2nd job
        id: dep
-       run: echo "subject=Maths" >> $GITHUB_OUTPUT       #output of a step
+       run: |
+         echo "subject=Maths" >> $GITHUB_OUTPUT       #output of a step
+         echo "Jo  goodname input se aya uski value h ${{ inputs.goodname }}"
+       
     
 
        
