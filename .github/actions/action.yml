@@ -6,8 +6,10 @@ runs:
 
   steps:
     - name: first step
+      shell: bash
       run: echo "Hi"
 
     - name: second step
+      shell: bash
       run: echo "Hello"
 
