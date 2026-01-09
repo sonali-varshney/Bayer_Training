@@ -66,6 +66,7 @@ jobs:
     steps:
       - name: checkout      #checkout krna hota h container k andr bhi
         run: actions/checkout@v4
+      - name: running command
         run: node -v
   
          
