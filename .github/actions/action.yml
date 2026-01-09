@@ -1,6 +1,17 @@
 name: reusable action
 description: This is composite action
 
+inputs:
+  appname:
+    required: true
+    type: string
+  hobby:
+    required: true
+    type: string
+outputs:
+  age:
+    value: ${{ steps.aging.outputs.age }}
+  
 runs:
   using: composite
 
@@ -13,4 +24,12 @@ runs:
     - name: second step
       shell: bash
       run: echo "Hello"
+
+    - name: THIRD step
+      id: aging
+      shell: bash
+      run: |
+        echo "input jo aya uski value h ${{ inputs.appname }} and ${{ inputs.hobby }}"
+        echo "age=34" >> $GITHUB_OUTPUT
+      
 
