@@ -18,7 +18,7 @@ runs:
   steps:      
   # Note: composite action me there should not be any "job" , only "steps". Note ye "steps:" "using:" k sath likhi jaegi otherwise error will come->  no step found.
     - name: first step
-      shell: bash       #composite action me hr step me ye line likhni hoti h otherwise it will throw error-> Required property is missing: shell
+      #shell: bash       #composite action me hr step me ye line likhni hoti h otherwise it will throw error-> Required property is missing: shell
       run: echo "Hi"
 
     - name: second step
