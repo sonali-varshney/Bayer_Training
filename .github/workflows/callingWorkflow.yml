@@ -26,5 +26,12 @@ jobs:
         uses: actions/checkout@v5.0.0
 
       - name: calling a composite action         #see we are calling a composite action in step level and not at job level
-        uses: ./.github/actions
-     
+        id: comp
+        uses: ./.github/actions      #Note: while calling composite action sirf directory tk ka path do jaha tumhari action.yml file h
+        with:
+          appname: clm
+          hobby: tennis
+
+      - name: fetching output from composite action
+        run: echo "value is ${{ steps.comp.outputs.age }}"
+          
