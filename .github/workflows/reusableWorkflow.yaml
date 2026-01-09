@@ -52,7 +52,22 @@ jobs:
          echo "2nd secret ki value h ${{ secrets.scndsecret }}"     #jb secret inherit kre to no need to define the secret upr, just use it like this
          echo "1st secret ki value h ${{ secrets.pehlasecretforreusableworkflow }}" 
         # echo "secret ki value h ${{ secrets.firstsecret }}"       #jb individually secret pass kre to aise upr defined secret ko use krosecret ho to
-
+  
+  forcontainer:
+    runs-on: ubuntu-latest
+    container:       #Note ye container we can define at job level only and not at step level.
+      image: node:18   #isme say mere vo dependency/version h jo mujhe chaiye jo VM me available ni h
+      #credentials:     #agr private registry se utha rhe h image
+        #username: <username>
+        #password: <password>
+        #Note: agr reusable workflow use kr rhe h toh "container" section hm reusable workflow me likhenge,caller workflow me ni likhenge.
+        #Note: agr composite action use kr rhe h toh "container" section hm caller workflow me likhenge, composite action wali file me ni likhenge.
+        
+    steps:
+      - name: checkout      #checkout krna hota h container k andr bhi
+        run: actions/checkout@v4
+        run: node -v
+  
          
        
 
